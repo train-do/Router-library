@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <style>
+      .li {
+        list-style-type: none;
+      }
+    </style>
+  </head>
+  <body>
+    {{template "header" .}}
+    <div>Register</div>
+    <form
+      action="/register"
+      method="post"
+      style="display: flex; flex-direction: column; width: 500px"
+    >
+      <input type="text" name="name" placeholder="name" required />
+      <input type="email" name="email" placeholder="email" required />
+      <input type="password" name="password" placeholder="password" required />
+      <button type="submit">Register</button>
+    </form>
+    <button onclick="history.back()">Back</button>
+    {{template "footer" .}}
+  </body>
+</html>

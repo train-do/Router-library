@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todos</title>
+    <style>
+      p {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    {{template "header" .}}
+    <div>TODOS</div>
+    <div style="display: flex; flex-direction: column">
+      {{range .Todos}}
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          width: 600px;
+          justify-content: space-around;
+        "
+      >
+        <p>{{.Todo}}</p>
+        {{if .IsDone}}
+        <p style="background-color: green; width: 100px; text-align: center">
+          Done
+        </p>
+        {{else}}
+        <p style="background-color: red; width: 100px; text-align: center">
+          Progress
+        </p>
+        {{end}}
+      </div>
+      {{end}}
+      <a href="/todo/create">Add Todo</a>
+      {{template "footer" .}}
+    </div>
+  </body>
+</html>

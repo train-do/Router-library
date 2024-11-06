@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todos</title>
+    <style>
+      p {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    {{template "header" .}}
+    <div>USERS</div>
+    <div style="display: flex; flex-direction: column">
+      {{range .Users}}
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          width: 600px;
+          justify-content: space-around;
+        "
+      >
+        <p>{{.Name}}</p>
+        <p>{{.Email}}</p>
+      </div>
+      {{end}} {{template "footer" .}}
+    </div>
+  </body>
+</html>

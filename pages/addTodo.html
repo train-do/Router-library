@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Todo</title>
+    <style>
+      .li {
+        list-style-type: none;
+      }
+    </style>
+  </head>
+  <body>
+    {{template "header" .}}
+    <div>Create Todo</div>
+    <form
+      action="/todo/create"
+      method="post"
+      style="display: flex; flex-direction: column; width: 500px"
+    >
+      <input type="text" name="todo" placeholder="Desc" required />
+      <input type="checkbox" name="isDone" />
+      <button type="submit">Submit</button>
+    </form>
+    <button onclick="history.back()">Back</button>
+    {{template "footer" .}}
+  </body>
+</html>
